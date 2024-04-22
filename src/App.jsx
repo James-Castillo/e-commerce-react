@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./Components/Products";
 import Product from "./Components/Product";
 import Carrito from "./Components/Carrito";
