@@ -1,19 +1,16 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Navbar() {
-  
-  const state = useSelector((state)=> state.handleCart);
+  const state = useSelector((state) => state.handleCart);
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
-          EASY MARKET
+            EASY MARKET
           </NavLink>
           <button
             className="navbar-toggler"
@@ -50,11 +47,18 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="buttons">
-                <button className="btn">
-                    <NavLink to="/" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i> Login</NavLink>
-                    <NavLink to="/" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i> Registrate</NavLink>
-                    <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i> Carrito ({state.length || 0})</NavLink>
-                </button>
+              <button className="btn">
+                <NavLink to="/" className="btn btn-outline-dark">
+                  <i className="fa fa-sign-in me-1"></i> Login
+                </NavLink>
+                <NavLink to="/" className="btn btn-outline-dark ms-2">
+                  <i className="fa fa-user-plus me-1"></i> Registrate
+                </NavLink>
+                <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                  <i className="fa fa-shopping-cart me-1"></i> Carrito (
+                  {state.length || 0})
+                </NavLink>
+              </button>
             </div>
           </div>
         </div>

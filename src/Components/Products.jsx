@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
@@ -17,7 +17,6 @@ export default function Products() {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
-        
       }
       return () => {
         componentMounted = false;
@@ -101,7 +100,10 @@ export default function Products() {
                     {product.title.substring(0, 12)}...
                   </h5>
                   <p className="card-text lead fw-bold">${product.price}</p>
-                  <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
+                  <NavLink
+                    to={`/products/${product.id}`}
+                    className="btn btn-outline-dark"
+                  >
                     Comprar Ahora
                   </NavLink>
                 </div>

@@ -1,6 +1,5 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { delCart, addCart } from '../redux/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { delCart, addCart } from "../redux/actions";
 
 const Carrito = () => {
   const cartItems = useSelector((state) => state.handleCart);
@@ -15,7 +14,10 @@ const Carrito = () => {
   };
 
   const calculateTotal = () => {
-    return cartItems.reduce((acc, product) => acc + (product.price * product.qty), 0);
+    return cartItems.reduce(
+      (acc, product) => acc + product.price * product.qty,
+      0
+    );
   };
 
   return (
@@ -37,7 +39,13 @@ const Carrito = () => {
               {cartItems.map((product) => (
                 <tr key={product.id}>
                   <td>{product.title}</td>
-                  <td><img src={product.image} alt={product.title} style={{ width: '50px', height: '50px' }} /></td>
+                  <td>
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      style={{ width: "50px", height: "50px" }}
+                    />
+                  </td>
                   <td>${product.price}</td>
                   <td>{product.qty}</td>
                   <td>
